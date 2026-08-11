@@ -7,6 +7,9 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   basePath: isProd && !isMainPages ? `/${repoName}` : '',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProd && !isMainPages ? `/${repoName}` : '',
+  },
   images: {
     unoptimized: true,
   },

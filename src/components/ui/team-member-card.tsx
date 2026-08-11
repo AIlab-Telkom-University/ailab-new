@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { TeamMember, SocialPlatform } from '@/types'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import { cn, getAssetPath } from '@/lib/utils'
 import { 
   Linkedin, 
   Github, 
@@ -67,7 +67,7 @@ export function TeamMemberCard({
         <div className="relative mx-auto mb-4 h-32 w-32 overflow-hidden rounded-full">
           {!imageError ? (
             <Image
-              src={member.image}
+              src={getAssetPath(member.image)}
               alt={member.name}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-110"

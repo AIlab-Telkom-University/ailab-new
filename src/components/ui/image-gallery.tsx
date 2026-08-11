@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import Image from 'next/image'
-import { cn } from '@/lib/utils'
+import { cn, getAssetPath } from '@/lib/utils'
 import { Card } from './card'
 
 interface GalleryImage {
@@ -45,7 +45,7 @@ export function ImageGallery({
           >
             <div className="relative aspect-video">
               <Image
-                src={image.src}
+                src={getAssetPath(image.src)}
                 alt={image.alt}
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-300"
@@ -69,7 +69,7 @@ export function ImageGallery({
         >
           <div className="relative max-w-4xl max-h-full">
             <Image
-              src={images[selectedImage].src}
+              src={getAssetPath(images[selectedImage].src)}
               alt={images[selectedImage].alt}
               width={800}
               height={600}

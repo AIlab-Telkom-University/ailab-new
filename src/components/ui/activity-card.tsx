@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Activity } from '@/types'
-import { cn } from '@/lib/utils'
+import { cn, getAssetPath } from '@/lib/utils'
 import { ChevronDown, ChevronUp, Users, BookOpen, Presentation } from 'lucide-react'
 
 interface ActivityCardProps {
@@ -82,7 +82,7 @@ export function ActivityCard({ activity, className, delay = 0 }: ActivityCardPro
           <div className="flex items-center gap-4 mb-4">
             <div className="relative w-16 h-16 rounded-lg overflow-hidden bg-white/50 flex items-center justify-center">
               <Image
-                src={activity.image}
+                src={getAssetPath(activity.image)}
                 alt={activity.name}
                 width={48}
                 height={48}

@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Mail, MapPin, ExternalLink } from 'lucide-react'
+import { getAssetPath } from '@/lib/utils'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -14,7 +15,7 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <Image
-                src="/images/logos/logo-xs.png"
+                src={getAssetPath('/images/logos/logo-xs.png')}
                 alt="AILab Logo"
                 width={32}
                 height={32}

@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import { cn, getAssetPath } from '@/lib/utils'
 
 const navigation = [
   { name: 'Home', href: '/' as const },
@@ -65,7 +65,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/images/logos/logo-xs.png"
+              src={getAssetPath('/images/logos/logo-xs.png')}
               alt="AILab Logo"
               width={32}
               height={32}

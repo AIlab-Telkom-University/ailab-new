@@ -78,23 +78,23 @@ export const generateFallback = (name: string): string => {
  * Transform image paths from legacy format to new format
  */
 export const transformImagePath = (legacyPath: string): string => {
-  if (!legacyPath) return '/images/placeholder.jpg';
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  let targetPath = legacyPath;
   
-  // Handle external URLs (dummy images, etc.)
-  if (legacyPath.startsWith('http')) {
-    return '/images/placeholder.jpg';
+  if (!legacyPath) {
+    targetPath = '/images/placeholder.jpg';
+  } else if (legacyPath.startsWith('http')) {
+    // Handle external URLs (dummy images, etc.)
+    targetPath = '/images/placeholder.jpg';
+  } else if (legacyPath.startsWith('/assets/images/')) {
+    // Transform legacy paths to new structure
+    targetPath = legacyPath.replace('/assets/images/', '/images/team/');
+  } else if (legacyPath.startsWith('/img/')) {
+    targetPath = legacyPath.replace('/img/', '/images/');
   }
   
-  // Transform legacy paths to new structure
-  if (legacyPath.startsWith('/assets/images/')) {
-    return legacyPath.replace('/assets/images/', '/images/team/');
-  }
-  
-  if (legacyPath.startsWith('/img/')) {
-    return legacyPath.replace('/img/', '/images/');
-  }
-  
-  return legacyPath;
+  const cleanPath = targetPath.startsWith('/') ? targetPath : `/${targetPath}`;
+  return `${basePath}${cleanPath}`;
 };
 
 /**

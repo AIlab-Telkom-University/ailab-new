@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { ChevronDown, Sparkles, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { siteConfig } from '@/data/site'
+import { getAssetPath } from '@/lib/utils'
 
 export function HeroSection() {
   const scrollToNext = () => {
@@ -90,7 +91,7 @@ export function HeroSection() {
               <div className="absolute inset-0 animate-glow rounded-full bg-primary/20 blur-xl" />
               <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full">
                 <Image
-                  src="/images/logos/logo-lg.png"
+                  src={getAssetPath('/images/logos/logo-lg.png')}
                   alt="AILab Logo"
                   fill
                   className="object-contain"
