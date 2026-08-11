@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production';
-const repoName = process.env.GITHUB_REPOSITORY ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}` : '';
+const repoName = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.split('/')[1] : '';
+const isMainPages = repoName.toLowerCase().endsWith('.github.io');
 
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: isProd ? repoName : '',
+  basePath: isProd && !isMainPages ? `/${repoName}` : '',
   images: {
     unoptimized: true,
   },
