@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header, Footer } from '@/components/layout'
+import { getAssetPath } from '@/lib/utils'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -63,14 +64,14 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/images/logos/logo-xs.png', sizes: '32x32', type: 'image/png' },
-      { url: '/images/logos/logo-md.png', sizes: '192x192', type: 'image/png' },
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/favicon.ico` },
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/logos/logo-xs.png`, sizes: '32x32', type: 'image/png' },
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/logos/logo-md.png`, sizes: '192x192', type: 'image/png' },
     ],
     apple: [
-      { url: '/images/logos/logo-md.png', sizes: '180x180', type: 'image/png' },
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/logos/logo-md.png`, sizes: '180x180', type: 'image/png' },
     ],
-    shortcut: '/favicon.ico',
+    shortcut: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/favicon.ico`,
   },
   metadataBase: new URL('https://ailab.telkomuniversity.ac.id'),
   verification: {
@@ -91,6 +92,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <link rel="shortcut icon" href={getAssetPath('/favicon.ico')} />
+        <link rel="icon" href={getAssetPath('/favicon.ico')} sizes="any" />
+        <link rel="icon" href={getAssetPath('/images/logos/logo-xs.png')} type="image/png" sizes="32x32" />
+        <link rel="icon" href={getAssetPath('/images/logos/logo-md.png')} type="image/png" sizes="192x192" />
+        <link rel="apple-touch-icon" href={getAssetPath('/images/logos/logo-md.png')} sizes="180x180" type="image/png" />
+      </head>
       <body className={`${inter.className} antialiased`}>
         <div className="min-h-screen flex flex-col">
           <Header />
