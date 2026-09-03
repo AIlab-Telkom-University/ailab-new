@@ -61,6 +61,17 @@ export const metadata: Metadata = {
     description: 'Artificial Intelligence Laboratory at Telkom University - Advancing AI research and education.',
     images: ['/images/logos/logo-lg.png'],
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/images/logos/logo-xs.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/logos/logo-md.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/images/logos/logo-md.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+  },
   metadataBase: new URL('https://ailab.telkomuniversity.ac.id'),
   verification: {
     google: 'your-google-verification-code',
