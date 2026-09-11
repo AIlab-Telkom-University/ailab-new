@@ -230,7 +230,7 @@ export const LAB_INFO = {
   },
   contact: {
     email: 'ailab@telkomuniversity.ac.id',
-    phone: '+62 22 7566456',
+    phone: '+6289516722649',
   },
   established: 2015,
 } as const;
