@@ -10,7 +10,7 @@ export const siteConfig = {
     fullAddress: 'Jl. Telekomunikasi No. 1, Terusan Buah Batu, Bandung 40257, West Java, Indonesia',
     email: 'ailab@telkomuniversity.ac.id',
     phone: '+6289516722649',
-    website: 'https://ailab-telkom-university.github.io/ailab-new/contact/',
+    website: 'https://ailab-telkom-university.github.io/ailab-new/',
   },
 
   // Social Media Links
