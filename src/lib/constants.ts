@@ -211,8 +211,9 @@ export const NAVIGATION = {
   ],
   
   social: {
-    instagram: 'https://instagram.com/ailab_telkomuniversity',
-    linkedin: 'https://linkedin.com/company/ailab-telkom-university',
+    github: 'https://github.com/ailabtelkom',
+    instagram: 'https://www.instagram.com/ailabtelkom',
+    linkedin: 'https://www.linkedin.com/company/ailabtelkom/',
     email: 'ailab@telkomuniversity.ac.id',
   },
 } as const;

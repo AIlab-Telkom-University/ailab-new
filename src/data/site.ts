@@ -15,11 +15,9 @@ export const siteConfig = {
 
   // Social Media Links
   social: {
-    instagram: 'https://www.instagram.com/ailab_telkomuniversity/',
-    linkedin: 'https://www.linkedin.com/company/ailab-telkom-university/',
     github: 'https://github.com/ailabtelkom',
-    youtube: 'https://www.youtube.com/@ailabtelkomuniversity',
-    twitter: 'https://twitter.com/ailab_telkom',
+    instagram: 'https://www.instagram.com/ailabtelkom',
+    linkedin: 'https://www.linkedin.com/company/ailabtelkom/',
   },
 
   // Laboratory Information

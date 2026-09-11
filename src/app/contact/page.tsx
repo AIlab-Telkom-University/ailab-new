@@ -41,9 +41,7 @@ export default function ContactPage() {
   const socialLinks = [
     { name: 'Instagram', url: social.instagram, icon: '📷' },
     { name: 'LinkedIn', url: social.linkedin, icon: '💼' },
-    { name: 'GitHub', url: social.github, icon: '🐙' },
-    { name: 'YouTube', url: social.youtube, icon: '📺' },
-    { name: 'Twitter', url: social.twitter, icon: '🐦' }
+    { name: 'GitHub', url: social.github, icon: '🐙' }
   ]
 
   return (
