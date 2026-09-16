@@ -46,15 +46,18 @@ export function Footer() {
                   <p>Bandung, West Java, Indonesia</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 flex-shrink-0 text-primary" />
-                <a
-                  href="mailto:ailab@telkomuniversity.ac.id"
-                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                >
-                  ailab@telkomuniversity.ac.id
-                </a>
-              </div>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=ailab.telu@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 group text-sm text-muted-foreground transition-colors duration-200 hover:text-primary cursor-pointer w-fit"
+                title="Tulis pesan di Gmail"
+              >
+                <Mail className="h-4 w-4 flex-shrink-0 text-primary transition-transform duration-200 group-hover:scale-110" />
+                <span className="group-hover:underline">
+                  ailab.telu@gmail.com
+                </span>
+              </a>
             </div>
           </div>
 

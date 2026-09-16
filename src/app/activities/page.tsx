@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+import Link from 'next/link'
 import { activities } from '@/data/activities'
 import { ActivityCard } from '@/components/ui/activity-card'
 import { Sparkles, Users, BookOpen, Presentation } from 'lucide-react'
@@ -78,19 +79,19 @@ export default function ActivitiesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="mailto:ailab@telkomuniversity.ac.id?subject=Interest in AILab Activities"
+                href="mailto:ailab.telu@gmail.com?subject=Interest in AILab Activities"
                 className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-6 py-3 rounded-lg transition-colors"
               >
                 <Users className="w-4 h-4" />
                 Contact Us
               </a>
-              <a
+              <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black font-medium px-6 py-3 rounded-lg transition-colors"
               >
                 <BookOpen className="w-4 h-4" />
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
         </div>

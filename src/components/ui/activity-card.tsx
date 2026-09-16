@@ -59,7 +59,7 @@ export function ActivityCard({ activity, className, delay = 0 }: ActivityCardPro
 
   const handleJoinClick = () => {
     // This could be enhanced to open a modal or navigate to a contact form
-    window.open('mailto:ailab@telkomuniversity.ac.id?subject=Interest in ' + activity.name, '_blank')
+    window.open('mailto:ailab.telu@gmail.com?subject=Interest in ' + activity.name, '_blank')
   }
 
   return (

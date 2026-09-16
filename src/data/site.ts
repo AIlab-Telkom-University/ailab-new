@@ -8,7 +8,7 @@ export const siteConfig = {
   contact: {
     address: 'TULT 0607, Telkom University Landmark Tower',
     fullAddress: 'Jl. Telekomunikasi No. 1, Terusan Buah Batu, Bandung 40257, West Java, Indonesia',
-    email: 'ailab@telkomuniversity.ac.id',
+    email: 'ailab.telu@gmail.com',
     phone: '+6289516722649',
     website: 'https://ailab-telkom-university.github.io/ailab-new/',
   },
