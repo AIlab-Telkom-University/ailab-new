@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+import type { Route } from 'next'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -209,12 +211,14 @@ export function OverviewSection() {
                     
                     <CardContent className="relative z-10 pt-0">
                       <Button
+                        asChild
                         variant="ghost"
-                        className="w-full justify-between group-hover:bg-primary/10 group-hover:text-primary transition-all"
-                        onClick={() => window.location.href = card.href}
+                        className="w-full justify-between group-hover:bg-primary/10 group-hover:text-primary transition-all cursor-pointer"
                       >
-                        Learn More
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <Link href={card.href as Route}>
+                          Learn More
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Link>
                       </Button>
                     </CardContent>
                   </Card>
@@ -234,12 +238,14 @@ export function OverviewSection() {
                   {siteConfig.laboratory.vision}
                 </p>
                 <Button
+                  asChild
                   size="lg"
-                  className="bg-primary text-black hover:bg-primary/90 font-semibold"
-                  onClick={() => window.location.href = '/about'}
+                  className="bg-primary text-black hover:bg-primary/90 font-semibold cursor-pointer"
                 >
-                  Learn More About Us
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <Link href="/about">
+                    Learn More About Us
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Link>
                 </Button>
               </CardContent>
             </Card>

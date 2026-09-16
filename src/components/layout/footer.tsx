@@ -46,13 +46,14 @@ export function Footer() {
                   <p>Bandung, West Java, Indonesia</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 flex-shrink-0 text-primary" />
+              <div className="flex items-center space-x-3 group">
+                <Mail className="h-4 w-4 flex-shrink-0 text-primary transition-transform duration-200 group-hover:scale-110" />
                 <a
-                  href="mailto:ailab@telkomuniversity.ac.id"
-                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                  href="mailto:ailab.telu@gmail.com"
+                  className="text-sm text-muted-foreground transition-colors duration-200 hover:text-primary hover:underline"
+                  title="Send email to AILab"
                 >
-                  ailab@telkomuniversity.ac.id
+                  ailab.telu@gmail.com
                 </a>
               </div>
             </div>

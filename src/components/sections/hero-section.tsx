@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ChevronDown, Sparkles, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -134,25 +135,25 @@ export function HeroSection() {
           className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <Button
+            asChild
             size="lg"
-            className="bg-primary px-8 py-3 text-lg font-semibold text-black hover:bg-primary/90"
-            onClick={() =>
-              document
-                .getElementById('overview')
-                ?.scrollIntoView({ behavior: 'smooth' })
-            }
+            className="bg-primary px-8 py-3 text-lg font-semibold text-black hover:bg-primary/90 cursor-pointer"
           >
-            <Sparkles className="mr-2 h-5 w-5" />
-            Explore Our Research
+            <Link href="/research">
+              <Sparkles className="mr-2 h-5 w-5" />
+              Explore Our Research
+            </Link>
           </Button>
           <Button
+            asChild
             variant="outline"
             size="lg"
-            className="border-primary px-8 py-3 text-lg font-semibold text-primary hover:bg-primary hover:text-black"
-            onClick={() => (window.location.href = '/team')}
+            className="border-primary px-8 py-3 text-lg font-semibold text-primary hover:bg-primary hover:text-black cursor-pointer"
           >
-            <Zap className="mr-2 h-5 w-5" />
-            Meet Our Team
+            <Link href="/team">
+              <Zap className="mr-2 h-5 w-5" />
+              Meet Our Team
+            </Link>
           </Button>
         </motion.div>
 
