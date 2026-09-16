@@ -20,7 +20,7 @@ export default function ContactPage() {
       title: 'Email',
       content: contact.email,
       subtitle: 'Send us an email',
-      action: () => window.open(`mailto:${contact.email}`, '_self')
+      action: () => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contact.email)}`, '_blank')
     },
     {
       icon: 'phone',
