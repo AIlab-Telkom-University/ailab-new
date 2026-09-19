@@ -34,6 +34,8 @@ export interface Activity {
   image: string;
   category: 'study-group' | 'focus-group' | 'workshop';
   features: string[];
+  guidebookUrl?: string;
+  formUrl?: string;
 }
 
 export interface ResearchArea {

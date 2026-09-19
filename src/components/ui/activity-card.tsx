@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Activity } from '@/types'
 import { cn, getAssetPath } from '@/lib/utils'
-import { ChevronDown, ChevronUp, Users, BookOpen, Presentation } from 'lucide-react'
+import { ChevronDown, ChevronUp, Users, BookOpen, Presentation, Download } from 'lucide-react'
 
 interface ActivityCardProps {
   activity: Activity
@@ -58,8 +58,17 @@ export function ActivityCard({ activity, className, delay = 0 }: ActivityCardPro
   }
 
   const handleJoinClick = () => {
-    // This could be enhanced to open a modal or navigate to a contact form
-    window.open('mailto:ailab.telu@gmail.com?subject=Interest in ' + activity.name, '_blank')
+    if (activity.formUrl) {
+      window.open(activity.formUrl, '_blank')
+    } else {
+      window.open('mailto:ailab.telu@gmail.com?subject=Interest in ' + activity.name, '_blank')
+    }
+  }
+
+  const handleGuidebookClick = () => {
+    if (activity.guidebookUrl) {
+      window.open(activity.guidebookUrl, '_blank')
+    }
   }
 
   return (
@@ -124,7 +133,7 @@ export function ActivityCard({ activity, className, delay = 0 }: ActivityCardPro
               </div>
             )}
 
-            <div className="flex items-center justify-between pt-2">
+            <div className="flex flex-wrap items-center justify-between gap-2 pt-2">
               <Button
                 variant="ghost"
                 size="sm"
@@ -144,13 +153,28 @@ export function ActivityCard({ activity, className, delay = 0 }: ActivityCardPro
                 )}
               </Button>
 
-              <Button
-                size="sm"
-                onClick={handleJoinClick}
-                className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium text-xs px-4"
-              >
-                Join Program
-              </Button>
+              <div className="flex items-center gap-2">
+                {activity.guidebookUrl && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={handleGuidebookClick}
+                    className="border-yellow-500/80 bg-white/60 dark:bg-black/20 hover:bg-yellow-500 hover:text-black font-medium text-xs px-3 transition-colors flex items-center gap-1.5 cursor-pointer"
+                    title="Download Guidebook via Google Drive"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    Guide Book
+                  </Button>
+                )}
+
+                <Button
+                  size="sm"
+                  onClick={handleJoinClick}
+                  className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium text-xs px-4 cursor-pointer"
+                >
+                  Join Program
+                </Button>
+              </div>
             </div>
           </div>
         </CardContent>
