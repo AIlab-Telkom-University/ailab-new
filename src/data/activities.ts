@@ -14,7 +14,9 @@ export const activities: Activity[] = [
       'Building foundational knowledge for AI development',
       'Hands-on workshops and practical sessions',
       'Regular study sessions and knowledge sharing'
-    ]
+    ],
+    guidebookUrl: 'https://drive.google.com/uc?export=download&id=1-mXDuXwDzFx9GRyRx_3nk-ngCX0G67j_',
+    formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSe2CwcQbMOVurgoNyMVS17l9g3rrQnunDnPI1Bp-7zgE49QXw/viewform?usp=publish-editor'
   },
   {
     id: 'focus-group',
