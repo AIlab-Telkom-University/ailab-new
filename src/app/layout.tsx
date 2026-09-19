@@ -73,9 +73,9 @@ export const metadata: Metadata = {
     ],
     shortcut: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/favicon.ico`,
   },
-  metadataBase: new URL('https://ailab.telkomuniversity.ac.id'),
+  metadataBase: new URL('https://ailab-telkom-university.github.io/ailab-new'),
   verification: {
-    google: 'your-google-verification-code',
+    google: 'google82fbe5c77b9449ed',
   },
 }
 
@@ -93,6 +93,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <meta name="google-site-verification" content="google82fbe5c77b9449ed" />
         <link rel="shortcut icon" href={getAssetPath('/favicon.ico')} />
         <link rel="icon" href={getAssetPath('/favicon.ico')} sizes="any" />
         <link rel="icon" href={getAssetPath('/images/logos/logo-xs.png')} type="image/png" sizes="32x32" />
